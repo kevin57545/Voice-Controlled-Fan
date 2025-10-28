@@ -43,12 +43,12 @@ SmartFanPi consists of four major components:
 ## Setup
 
 ### Arduino 
-- In the `fansArduino` directory, you will find all Arduino-related source files, including both **test programs** and the **main control program** `fanSystem.ino`.
+- The `fansArduino` directory contains all Arduino-related source files, including both **test programs** and the **main control program** `fanSystem.ino`.
 ### ResperryPi
-- In the `fansRaspberryPi` directory, you will find all Raspberry Pi–related code, including both **test programs** and the **main runtime script** `snowboyDetection.py`.  
-This Python script is responsible for **detecting voice commands** and **communicating with the Arduino** via serial connection.
-To ensure proper operation, follow these setup steps:
+- The `fansRaspberryPi` directory contains all Raspberry Pi–related code, including both **test programs** and the **main runtime script** `snowboyDetection.py`.  
+This Python script is responsible for **detecting voice commands** and **communicating with the Arduino** via a serial connection.
 
+To ensure proper operation, follow these setup steps:
 1. Clone the [Kitt-AI Snowboy](https://github.com/Kitt-AI/snowboy) project onto Raspberry Pi.
 2. Inside the cloned repository, locate the examples/python/ folder.
 3. Copy the entire python folder and rename it to snowboytest.
