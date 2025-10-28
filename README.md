@@ -1,10 +1,10 @@
-# 🌀 SmartFanPi
+# Voice-Controlled-Fan
 **An offline voice-controlled smart fan powered by Raspberry Pi and Arduino using Snowboy for speech recognition.**
 
 ---
 
 ## Abstract
-SmartFanPi is a smart home project that integrates **Raspberry Pi**, **Arduino**, and the **Snowboy** wake-word detection engine to realize a **fully offline voice-controlled electric fan**.  
+This is a project that integrates **Raspberry Pi**, **Arduino**, and the **Snowboy** wake-word detection engine to realize a **fully offline voice-controlled electric fan**.  
 The system allows users to control the fan’s power, wind speed, oscillation, and timer using voice commands — eliminating the need for a remote control or internet connection.  
 
 By combining **offline speech recognition** with **microcontroller-based hardware control**, SmartFanPi provides a convenient, privacy-preserving, and extensible solution for home appliance automation.  
@@ -40,31 +40,23 @@ SmartFanPi consists of four major components:
 
 ---
 
-## Software & Tools
-| Component | Description |
-|------------|-------------|
-| **Raspberry Pi OS** | Main operating system for running Python and Snowboy |
-| **Arduino IDE (C/C++)** | For uploading control logic to Arduino board |
-| **Python 3** | Implements voice command logic and serial communication |
-| **Snowboy** | Offline wake-word detection engine |
-| **Docker** | Used for model training environment |
-| **VirtualBox** | Used for testing and simulation environment |
+## Setup
+
+### Arduino 
+- In the `fansArduino` directory, you will find all Arduino-related source files, including both **test programs** and the **main control program** `fanSystem.ino`.
+### ResperryPi
+- In the `fansRaspberryPi` directory, you will find all Raspberry Pi–related code, including both **test programs** and the **main runtime script** `snowboyDetection.py`.  
+This Python script is responsible for **detecting voice commands** and **communicating with the Arduino** via serial connection.
+To ensure proper operation, follow these setup steps:
+
+1. Clone the [Kitt-AI Snowboy](https://github.com/Kitt-AI/snowboy) project onto Raspberry Pi.
+2. Inside the cloned repository, locate the examples/python/ folder.
+3. Copy the entire python folder and rename it to snowboytest.
+4. Place your main script snowboyDetection.py and the trained voice model files (PMDL directory) into the ~/snowboytest/ folder.
+5. Run the program
+6. Once executed, the Raspberry Pi will start listening for your wake word and send control commands to the Arduino in real time.
 
 ---
 
-## 🔮 未來展望 (Future Work)
-- Improve **microphone sensitivity** and **recognition accuracy**  
-- Expand **voice model dataset** for multi-speaker robustness  
-- Add **sound localization** for auto head-turning toward user  
-- Develop **mobile app** for custom voice command setup  
-- Integrate with IoT cloud or MQTT for smart home ecosystem  
-
----
-
-## 🪪 License
-This project is released for educational and research purposes.  
-You may modify and share under the terms of the MIT License.
-
----
-
-> 🌀 *“Technology inspired by humanity — making everyday life smarter and simpler.”*
+## Note
+For further details, demonstrations, and implementation explanations, please refer to the project report`專題成果報告書.pdf`.
